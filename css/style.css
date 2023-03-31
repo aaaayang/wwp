@@ -1,15 +1,16 @@
 body{
-    font-family: 'Times New Roman', Verdana;
+    font-family: 'Montserrat', Verdana;
     background-color: #ebecf0;
     margin: 20px 20px 0px 20px;
     color: black;
     line-height: 1.5;
+    background-image: url("../images/pattern-07.jpg");
 }
 
-header, nav{
+header{
     /* Set padding and margin */
-    padding: 10px 15px 10px 15px;
-    margin: 0px 40px 0px 150px;
+    padding: 10px 15px 10px 35px;
+    margin: 0px 30px 0px 30px;
     background-color: beige;
 }
 
@@ -25,11 +26,6 @@ a:hover{
     text-decoration-color: red;
     text-decoration-line: underline;
 }
-
-li {
-    display: inline;
-    padding: 80px 80px 80px 50px;
-  }
 
 div{
     display: grid;
@@ -70,3 +66,161 @@ footer{
     text-align: center;
     border: solid 10px black;
 } 
+
+a.skip{
+    background: greenyellow;
+    position: absolute;
+    left: -1000px;
+  }
+
+a.skip:focus{
+    left: 0px;
+}
+
+nav a:focus{
+    border-top: yellow solid 10px;
+}
+
+nav ul li{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-flow: column wrap;
+}
+
+nav .active{
+    font-size: 200%;
+}
+
+/* The animation code */
+@keyframes fd_animation {
+    from {background-color: #d3d3d3;}
+    to {background-color: aqua;}
+  }
+
+
+.grid_fd{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 30px;
+    width: 100%;
+    animation-name: fd_animation;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+}
+
+.grid_fd:hover{
+    animation: shake 1.5s;
+    animation-iteration-count: infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .grid_fd {
+        animation: none;
+    }
+  }
+
+.term{
+    border-bottom: 10px black solid;
+}
+
+form {
+    background-color: gold;
+    width: 235px;
+    height: 44px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  input {
+    all: unset;
+    font: 16px system-ui;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    padding: 6px 10px;
+  }
+
+  #homephoto{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+  }
+
+  #homeintroblurb{
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  #homecontentblurb{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-weight: bold;
+    font-size: 150%;
+  }
+
+  #homeendblurb{
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  h2{
+    font-size: 150%;
+    font-weight: bold;
+  }
+
+  h3{
+    font-size: 150%;
+    font-weight: bold;
+  }
+
+  .grid_lit{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 20px;
+    width: 100%;
+    }
+
+    .term_lit{
+    border-bottom: 20px pink solid;
+    }   
+
+  @media only screen and (min-width : 768px) {
+    nav ul li{
+        display: inline;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex-flow: row wrap;
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    nav .active{
+        font-size: 300%;
+    }
+
+    nav a{
+        /* Set text decoration*/
+        color: red;
+        text-decoration: wavy;
+    }
+
+    .grid_lit{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 20px;
+        width: 100%;
+    }
+
+    .term_lit{
+        border-bottom: 10px rebeccapurple dashed;
+    }
+
+    .term_hist{
+        border-bottom: 10px blue solid;
+    }
+
+  }
